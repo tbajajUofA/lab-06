@@ -26,4 +26,19 @@ public class City implements Comparable {
         return this.city.compareTo(city.getCity());
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o){
+            return true;
+        }
+
+        if ((o instanceof City)==false||o == null) {
+            return false;
+        }
+        City other = (City) o;
+        return this.city.equals(other.city) && this.province.equals(other.province);
+    }
+
+    //no need to override hashcode function cuz not using that for this project
+
 }

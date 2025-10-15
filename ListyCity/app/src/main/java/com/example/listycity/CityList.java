@@ -1,7 +1,5 @@
 package com.example.listycity;
 
-
-
 import java.util.ArrayList;
 
 import java.util.Collections;
@@ -38,5 +36,25 @@ public class CityList {
         List<City> list = cities;
         Collections.sort(list);
         return list;
+    }
+
+    public Boolean hasCity(City city){
+        if (cities.contains(city)){
+            return true;
+        }
+        return false;
+    }
+
+    public void delete(City city){
+        if (hasCity(city)){
+            cities.remove(city);
+        }
+        else{
+            throw new IllegalArgumentException();
+        }
+    }
+
+    public int countCities(){
+        return cities.size();
     }
 }
